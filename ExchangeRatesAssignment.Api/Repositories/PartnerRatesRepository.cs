@@ -1,5 +1,4 @@
 ﻿using ExchangeRatesAssignment.Api.Domain;
-using ExchangeRatesAssignment.Domain;
 using System.Text.Json;
 
 namespace ExchangeRatesAssignment.Repositories
@@ -8,14 +7,14 @@ namespace ExchangeRatesAssignment.Repositories
     {
         public async Task<IEnumerable<PartnerRate>> GetPartnerRatesAsync(string countryCode, CancellationToken cancellationToken = default)
         {
-            var validatedPartnerRates = Enumerable.Empty<PartnerRate>();
+            var partnerRates = Enumerable.Empty<PartnerRate>();
 
             string text = await File.ReadAllTextAsync(@"Repositories/PartnerRates.json", cancellationToken);
-            var response = JsonSerializer.Deserialize<PartnerRatesServiceResponse>(text);
+            var response = JsonSerializer.Deserialize<IList<PartnerRate>>(text);
 
-            //TODO: Implement the logic to populate validatedPartnerRates with the most recent exchange rates for a given country code.
+            //TODO: Implement the logic to populate partnerRates.
 
-            return validatedPartnerRates;
+            return partnerRates;
         }
     }
 }

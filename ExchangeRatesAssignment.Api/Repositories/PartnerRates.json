@@ -1,5 +1,4 @@
-{
-  "PartnerRates": [
+[
     {
       "Currency": "MXN",
       "PaymentMethod": "debit",
@@ -161,5 +160,4 @@
       "Rate": 81.63,
       "AcquiredDate": "2023-07-24T05:00:00.000Z"
     }
-  ]
-}
+ ]
