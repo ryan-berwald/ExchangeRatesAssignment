@@ -1,6 +1,8 @@
 ﻿namespace ExchangeRatesAssignment.Api.Utils
 {
     public record Country(string Name, string CountryCode, string CurrencyCode, decimal flatRate);
+
+    // Contains the mapping and the flat rate that should be used for exchange rate calculation for each country
     public static class CountryConfig
     {
         public static Dictionary<string, Country> GetCountries()
