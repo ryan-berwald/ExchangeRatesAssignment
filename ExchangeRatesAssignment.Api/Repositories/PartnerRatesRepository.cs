@@ -13,7 +13,7 @@ namespace ExchangeRatesAssignment.Repositories
             string text = await File.ReadAllTextAsync(@"Repositories/PartnerRates.json", cancellationToken);
             var response = JsonSerializer.Deserialize<IList<PartnerRate>>(text);
 
-            //TODO: Implement the logic to validate partnerRates.
+            //TODO: Implement the logic to validate and populate partnerRates.
 
             return partnerRates;
         }
