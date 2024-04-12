@@ -3,6 +3,7 @@
     public enum PaymentMethod
     {
         Debit,
-        BankAccount
+        BankAccount,
+        Cash
     }
 }
