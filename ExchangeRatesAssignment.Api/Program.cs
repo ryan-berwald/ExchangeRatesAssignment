@@ -1,3 +1,5 @@
+using ExchangeRatesAssignment.Api.Interfaces;
+using ExchangeRatesAssignment.Api.Services;
 using ExchangeRatesAssignment.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,8 @@ builder.Services.AddSwaggerGen();
     services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 
     services.AddScoped<IPartnerRatesRepository, PartnerRatesRepository>();
+    services.AddScoped<IExchangeRateService, ExchangeRateService>();
+    services.AddScoped<IValidationService, ValidationService>();
 }
 
 var app = builder.Build();
